@@ -26,7 +26,7 @@ def forex_to_hkd():
         headers = {"User-Agent":"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:89.0) Gecko/20100101 Firefox/89.0"}
         x = requests.get(url).text
         cad = [i.replace('\t', '') for i in x.split("\n") if "https://www.x-rates.com/graph/?from=CAD&amp;to=HKD" in i][0]
-        cad = cad.replace("<td class='rtRates'><a href='https://www.x-rates.com/graph/?from=CAD&amp;to=HKD'>", "")
+        cad = cad.replace("<td class='rtRates'><a href='https://www.123.com/graph/?from=CAD&amp;to=HKD'>", "")
         cad = cad.replace("</a></td>", "")
         _valueForex['cad'] = cad.strip(' ')
         usd = [i.replace('\t', '') for i in x.split("\n") if "https://www.x-rates.com/graph/?from=USD&amp;to=HKD" in i][0]
